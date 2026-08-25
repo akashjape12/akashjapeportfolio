@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Design Portfolio</title>
+<meta name="description" content="Product design and fabrication portfolio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Your<span>Name</span></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#misc">Misc</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Product &amp; fabrication design</p>
+    <h1>Your Name</h1>
+    <div class="role-line">
+      <span><b>Role</b> — Product Designer</span>
+      <span><b>Based in</b> — City, State</span>
+      <span><b>Available</b> — Open to opportunities</span>
+    </div>
+    <p class="intro">
+      Replace this with a short intro paragraph: what kind of designer you are,
+      what you like to make, and what draws you to the physical / fabrication
+      side of the work. Two to three sentences is plenty.
+    </p>
+    <div class="ruler" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <span class="count" id="work-count"></span>
+      </div>
+      <div id="work-grid" class="work-grid"></div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Experience</h2>
+      </div>
+      <div id="experience-list"></div>
+    </div>
+  </section>
+
+  <section id="misc" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Miscellaneous</h2>
+        <span class="count">Product only, no process</span>
+      </div>
+      <div id="misc-grid" class="misc-grid"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="about" class="site-footer">
+  <div class="wrap">
+    <h2>About / Contact</h2>
+    <p>
+      Replace this with a short bio — background, interests, what you're
+      looking for. Keep it to a paragraph or two.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:you@example.com">Email</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Resume (PDF)</a>
+      <a href="#">Instagram</a>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> Your Name. Built with GitHub Pages.</p>
+  </div>
+</footer>
+
+<script src="js/helpers.js"></script>
+<script src="js/data/projects.js"></script>
+<script src="js/data/experience.js"></script>
+<script src="js/data/misc.js"></script>
+<script src="js/render-home.js"></script>
+</body>
+</html>
