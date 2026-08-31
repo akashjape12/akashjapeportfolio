@@ -265,8 +265,8 @@ h1, h2, h3 {
 
 .about-blurb {
   max-width: 100%;
-  font-size: 16px;
-  color: var(--color-ink-soft);
+  font-size: 18px;
+  color: var(--color-ink);
 }
 
 /* =========================================================
