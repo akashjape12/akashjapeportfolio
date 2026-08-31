@@ -133,8 +133,14 @@ h1, h2, h3 {
    HERO
    ========================================================= */
 .hero {
-  padding: clamp(56px, 10vw, 120px) 0 clamp(40px, 6vw, 72px);
+  padding: clamp(32px, 6vw, 80px) 0 clamp(40px, 6vw, 72px);
   border-bottom: var(--rule-thick);
+  position: relative;
+  background-image:
+    linear-gradient(rgba(241, 238, 230, 0.75), rgba(241, 238, 230, 0.55)),
+    url("../assets/hero_bg.jpg");
+  background-size: cover;
+  background-position: center 65%;
 }
 
 .hero h1 {
@@ -159,10 +165,52 @@ h1, h2, h3 {
 }
 
 .hero p.intro {
-  margin-top: 28px;
+  margin-top: 10px;
   max-width: 58ch;
   font-size: clamp(16px, 1.6vw, 19px);
   color: var(--color-ink-soft);
+}
+
+.hero-divider {
+  margin: 10px auto 0 0;
+  width: 60%;
+  border: none;
+  border-top: var(--rule-thin);
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 5vw, 56px);
+}
+
+.hero-photo {
+  flex: 0 0 clamp(180px, 22vw, 260px);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: var(--rule-thin);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  flex: 0 1 550px;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-photo {
+    flex-basis: auto;
+    width: 160px;
+  }
 }
 
 .ruler {
@@ -215,6 +263,12 @@ h1, h2, h3 {
   color: var(--color-ink-soft);
 }
 
+.about-blurb {
+  max-width: 100%;
+  font-size: 16px;
+  color: var(--color-ink-soft);
+}
+
 /* =========================================================
    WORK GRID / PROJECT CARDS
    ========================================================= */
@@ -247,7 +301,8 @@ h1, h2, h3 {
   border-bottom: var(--rule-thin);
 }
 
-.project-card .thumb img {
+.project-card .thumb img,
+.project-card .thumb video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -292,8 +347,6 @@ h1, h2, h3 {
 
 .title-block .field {
   padding: 8px 10px;
-  border-right: var(--rule-thin);
-  border-top: var(--rule-thin);
 }
 .title-block .field:nth-child(2n) { border-right: none; }
 .title-block .field:nth-child(-n+2) { border-top: none; }
@@ -336,10 +389,35 @@ h1, h2, h3 {
   padding: 22px 24px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   border-bottom: var(--rule-thin);
+}
+
+.exp-head-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.exp-logo {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: var(--rule-thin);
+  overflow: hidden;
+  background: var(--color-paper);
+}
+.exp-logo img,
+.exp-logo video { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.exp-logo .img-placeholder {
+  min-height: 0;
+  height: 100%;
+  border: none;
+  font-size: 7px;
+  padding: 2px;
 }
 
 .experience-entry h3 {
@@ -361,47 +439,51 @@ h1, h2, h3 {
 
 .experience-entry .exp-summary {
   padding: 20px 24px 0;
-  max-width: 68ch;
+  max-width: 100%;
   color: var(--color-ink-soft);
   font-size: 15px;
+}
+
+.cs-title-block.exp-confidentiality {
+  display: block;
+  width: fit-content;
+  max-width: 620px;
+  margin: 20px 24px 0;
+  border: none;
+}
+.cs-title-block.exp-confidentiality .field {
+  border: var(--rule-thin);
+}
+.cs-title-block.exp-confidentiality dd {
+  line-height: 1.6;
 }
 
 .exp-projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 20px 24px 24px;
+  padding: 0 24px 24px;
 }
-
-.exp-project {
-  background: var(--color-panel);
-  padding: 16px 18px 20px;
-}
-
-.exp-project .thumb {
-  aspect-ratio: 4/3;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-.exp-project .thumb img { width: 100%; height: 100%; object-fit: cover; }
-
-.exp-project h4 {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 15px;
-  margin: 0 0 6px;
-  text-transform: none;
-}
-
-.exp-project p {
-  font-size: 13.5px;
-  color: var(--color-ink-soft);
-  margin: 0;
+.exp-projects .cs-block:first-child {
+  border-top: none;
 }
 
 /* =========================================================
    MISC GRID
    ========================================================= */
+.misc-filter {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border: var(--rule-thin);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.misc-filter:hover,
+.misc-filter:focus-visible {
+  border-color: var(--color-oxide);
+}
+
 .misc-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -421,7 +503,8 @@ h1, h2, h3 {
   overflow: hidden;
   border-bottom: var(--rule-thin);
 }
-.misc-item .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.misc-item .thumb img,
+.misc-item .thumb video { width: 100%; height: 100%; object-fit: cover; }
 
 .misc-item .cap {
   padding: 10px 12px;
@@ -434,7 +517,7 @@ h1, h2, h3 {
 .misc-item:hover .cap { color: var(--color-oxide); }
 
 /* =========================================================
-   FOOTER / ABOUT
+   FOOTER / RESOURCES
    ========================================================= */
 .site-footer {
   border-top: var(--rule-thick);
@@ -476,6 +559,13 @@ h1, h2, h3 {
 }
 
 /* =========================================================
+   EXPERIENCE DETAIL PAGE
+   ========================================================= */
+.exp-detail {
+  padding: 40px 0 80px;
+}
+
+/* =========================================================
    CASE STUDY PAGE
    ========================================================= */
 .cs-header {
@@ -501,7 +591,7 @@ h1, h2, h3 {
 
 .cs-header .summary {
   margin-top: 16px;
-  max-width: 62ch;
+  max-width: 100ch;
   font-size: 17px;
   color: var(--color-ink-soft);
 }
@@ -509,7 +599,8 @@ h1, h2, h3 {
 .cs-title-block {
   margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: max-content;
+  width: fit-content;
   border-top: var(--rule-thin);
   border-left: var(--rule-thin);
   font-family: var(--font-mono);
@@ -540,7 +631,8 @@ h1, h2, h3 {
   aspect-ratio: 16/9;
   overflow: hidden;
 }
-.cs-hero img { width: 100%; height: 100%; object-fit: cover; }
+.cs-hero img,
+.cs-hero video { width: 100%; height: 100%; object-fit: cover; }
 
 .cs-block {
   padding: 36px 0;
@@ -563,6 +655,37 @@ h1, h2, h3 {
   max-width: 68ch;
 }
 
+.cs-block .body-text {
+  color: var(--color-ink-soft);
+  font-size: 16px;
+  max-width: 68ch;
+}
+.cs-block .body-text ul,
+.cs-block .body-text ol {
+  padding-left: 1.2em;
+  margin: 12px 0;
+}
+.cs-block .body-text li {
+  margin-bottom: 6px;
+}
+
+/* boxed link/button, same visual language as the confidentiality note box */
+.cs-link-box {
+  display: block;
+  width: fit-content;
+  max-width: 620px;
+  margin-top: 4px;
+  padding: 12px 16px;
+  border: var(--rule-thin);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+.cs-link-box:hover {
+  color: var(--color-oxide);
+  border-color: var(--color-oxide);
+}
+
 .cs-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -570,7 +693,59 @@ h1, h2, h3 {
   margin-top: 20px;
 }
 
-.cs-gallery img, .cs-gallery .img-placeholder { border: var(--rule-thin); }
+.cs-gallery img, .cs-gallery video, .cs-gallery .img-placeholder { border: var(--rule-thin); }
+
+.cs-section-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.cs-section-images img,
+.cs-section-images video {
+  border: var(--rule-thin);
+  aspect-ratio: auto;
+  object-fit: contain;
+  flex: 0 1 auto;
+  max-width: 320px;
+}
+.cs-section-images .img-placeholder {
+  border: var(--rule-thin);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  flex: 1 1 260px;
+  max-width: 320px;
+}
+
+/* experience mini-project images: left-justified, with room for a skills list beside them */
+.exp-projects .cs-section-images {
+  justify-content: flex-start;
+}
+
+.exp-media-row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 16px;
+}
+.exp-media-row .cs-section-images {
+  margin-top: 0;
+}
+
+.exp-skills {
+  flex: 1 1 200px;
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--color-ink-soft);
+  font-size: 15px;
+}
+.exp-skills li {
+  margin-bottom: 6px;
+}
 
 .cs-nav {
   margin-top: 24px;

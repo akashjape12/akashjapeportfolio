@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Design Portfolio</title>
+<title>Akash Jape Design Portfolio</title>
 <meta name="description" content="Product design and fabrication portfolio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,43 +14,49 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a class="brand" href="index.html">Your<span>Name</span></a>
+    <a class="brand" href="index.html">Akash<span>Jape</span></a>
     <ul>
-      <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#misc">Misc</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#work">Selected Work</a></li>
+      <li><a href="#misc">Project Gallery</a></li>
+      <li><a href="#resources">Resources</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Product &amp; fabrication design</p>
-    <h1>Your Name</h1>
-    <div class="role-line">
-      <span><b>Role</b> — Product Designer</span>
-      <span><b>Based in</b> — City, State</span>
-      <span><b>Available</b> — Open to opportunities</span>
+  <div class="wrap hero-inner">
+    <div class="hero-photo">
+      <img src="assets/headshot.jpeg" alt="Akash Jape">
     </div>
-    <p class="intro">
-      Replace this with a short intro paragraph: what kind of designer you are,
-      what you like to make, and what draws you to the physical / fabrication
-      side of the work. Two to three sentences is plenty.
-    </p>
-    <div class="ruler" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Product Design &amp; Fabrication</p>
+      <h1>Akash Jape</h1>
+      <div class="role-line">
+        <span><b>The University of Texas at Austin</b> — B.S. Mechanical Engineering</span>
+        <span>Materials Science and Engineering Minor<br> May 2027</span>
+      </div>
+      <hr class="hero-divider">
+      <p class="intro">
+        <b>Design at the intersection of engineering and human behavior.<br></b>
+        Taking products through ideation, rapid prototyping, and validation
+        by integrating manufacturing constraints, material characteristics,
+        and human-centered design factors.
+      </p>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <section id="work" class="section">
+  <section id="about-me" class="section">
     <div class="wrap">
       <div class="section-head">
-        <h2>Selected work</h2>
-        <span class="count" id="work-count"></span>
+        <h2>About Me</h2>
       </div>
-      <div id="work-grid" class="work-grid"></div>
+      <p class="about-blurb">
+        Hi, I'm a Mechanical Engineering student at UT Austin with a Materials Science concentration, and a passion for building things that people interact, live, and work with. My first exposure to engineering was the 3D printer I had as a teenager, which sparked my curiosity and drive to understand how things are made. Tired of scouring the internet for part files, I learned parametric modeling in order to develop and fabricate my own assistive tools for my family and friends. In my time at UT, I've had the opportunity to work across consumer product design engineering at SharkNinja, semiconductor manufacturing at Qorvo, and operations and technical support at Texas Inventionworks, UT Austin's makerspace. These experiences have taken me from whiteboard concepts to finished products, working across teams and driving projects from first principles to final deliverables.
+      </p>
     </div>
   </section>
 
@@ -59,15 +65,24 @@
       <div class="section-head">
         <h2>Experience</h2>
       </div>
-      <div id="experience-list"></div>
+      <div id="experience-list" class="work-grid"></div>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+      </div>
+      <div id="work-grid" class="work-grid"></div>
     </div>
   </section>
 
   <section id="misc" class="section">
     <div class="wrap">
       <div class="section-head">
-        <h2>Miscellaneous</h2>
-        <span class="count">Product only, no process</span>
+        <h2>Project Gallery</h2>
+        <select id="misc-filter" class="misc-filter"></select>
       </div>
       <div id="misc-grid" class="misc-grid"></div>
     </div>
@@ -75,20 +90,15 @@
 
 </main>
 
-<footer id="about" class="site-footer">
+<footer id="resources" class="site-footer">
   <div class="wrap">
-    <h2>About / Contact</h2>
-    <p>
-      Replace this with a short bio — background, interests, what you're
-      looking for. Keep it to a paragraph or two.
-    </p>
+    <h2>Resources</h2>
     <div class="contact-links">
-      <a href="mailto:you@example.com">Email</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Resume (PDF)</a>
-      <a href="#">Instagram</a>
+      <a href="mailto:akashjape@gmail.com">akashjape@gmail.com</a>
+      <a href="https://www.linkedin.com/in/akashjape" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="assets/resume.pdf" download="Akash-Jape-Resume.pdf">Resume (PDF)</a>
     </div>
-    <p class="copyright">&copy; <span id="year"></span> Your Name. Built with GitHub Pages.</p>
+    <p class="copyright">&copy; <span id="year"></span> Akash Jape. Built with GitHub Pages.</p>
   </div>
 </footer>
 

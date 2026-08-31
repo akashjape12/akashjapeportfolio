@@ -4,10 +4,7 @@ function renderProjectCard(p) {
 
   const titleBlock = el("dl", { class: "title-block" }, []);
   const fields = [
-    ["No.", p.number],
-    ["Year", p.year],
-    ["Material", p.material],
-    ["Role", p.role]
+    ["Material", p.material]
   ];
   fields.forEach(([label, value]) => {
     const field = el("div", { class: "field" }, [
@@ -40,37 +37,27 @@ function renderWork() {
 }
 
 // ---------- EXPERIENCE ----------
-function renderExperienceProject(ep) {
-  const thumb = el("div", { class: "thumb" }, [mediaEl(ep.image, ep.title, "4:3")]);
-  const h4 = el("h4", {}, []); h4.textContent = ep.title;
-  const p = el("p", {}, []); p.textContent = ep.description;
-  return el("div", { class: "exp-project" }, [thumb, h4, p]);
-}
-
-function renderExperienceEntry(x) {
-  const head = el("div", { class: "exp-head" }, [
-    el("div", {}, [
-      el("h3", {}, []),
-      el("div", { class: "exp-role" }, [])
-    ]),
-    el("div", { class: "exp-dates" }, [])
+function renderExperienceCard(x) {
+  const logo = el("div", { class: "exp-logo" }, [mediaEl(x.logo, `${x.company} logo`)]);
+  const titleRow = el("div", { class: "exp-head-left" }, [
+    logo,
+    el("h3", {}, [])
   ]);
-  head.querySelector("h3").textContent = x.company;
-  head.querySelector(".exp-role").textContent = `${x.role} · ${x.location}`;
-  head.querySelector(".exp-dates").textContent = x.dates;
+  titleRow.querySelector("h3").textContent = x.company;
 
-  const summary = el("p", { class: "exp-summary" }, []);
-  summary.textContent = x.summary;
+  const body = el("div", { class: "card-body" }, [
+    titleRow,
+    el("p", { class: "summary" }, [])
+  ]);
+  body.querySelector(".summary").textContent = x.summary;
 
-  const projectsWrap = el("div", { class: "exp-projects" }, (x.projects || []).map(renderExperienceProject));
-
-  return el("div", { class: "experience-entry" }, [head, summary, projectsWrap]);
+  return el("a", { class: "project-card", href: `experience.html?id=${encodeURIComponent(x.id)}` }, [body]);
 }
 
 function renderExperience() {
   const wrap = document.getElementById("experience-list");
   if (!wrap) return;
-  window.EXPERIENCE.forEach(x => wrap.appendChild(renderExperienceEntry(x)));
+  window.EXPERIENCE.forEach(x => wrap.appendChild(renderExperienceCard(x)));
 }
 
 // ---------- MISC ----------
@@ -83,10 +70,34 @@ function renderMiscItem(m) {
   return el(tag, attrs, [thumb, cap]);
 }
 
+function renderMiscGrid(process) {
+  const grid = document.getElementById("misc-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const items = process === "all" ? window.MISC : window.MISC.filter(m => m.process === process);
+  items.forEach(m => grid.appendChild(renderMiscItem(m)));
+}
+
 function renderMisc() {
   const grid = document.getElementById("misc-grid");
   if (!grid) return;
-  window.MISC.forEach(m => grid.appendChild(renderMiscItem(m)));
+
+  const select = document.getElementById("misc-filter");
+  if (select) {
+    const allOption = el("option", { value: "all" }, []);
+    allOption.textContent = "All Processes";
+    select.appendChild(allOption);
+
+    (window.MISC_CATEGORIES || []).forEach(cat => {
+      const option = el("option", { value: cat }, []);
+      option.textContent = cat;
+      select.appendChild(option);
+    });
+
+    select.addEventListener("change", () => renderMiscGrid(select.value));
+  }
+
+  renderMiscGrid(select ? select.value : "all");
 }
 
 document.addEventListener("DOMContentLoaded", () => {

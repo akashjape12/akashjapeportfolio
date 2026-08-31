@@ -1,6 +1,18 @@
-// Renders an <img> if a path is given, otherwise a styled placeholder block.
+const VIDEO_EXTENSIONS = /\.(mp4|webm|mov|m4v)(\?.*)?$/i;
+
+// Renders an <img> (or <video controls> for a video path) if a path is
+// given, otherwise a styled placeholder block.
 function mediaEl(path, alt, ratioLabel) {
   if (path) {
+    if (VIDEO_EXTENSIONS.test(path)) {
+      const video = document.createElement("video");
+      video.src = path;
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      if (alt) video.setAttribute("aria-label", alt);
+      return video;
+    }
     const img = document.createElement("img");
     img.src = path;
     img.alt = alt || "";
