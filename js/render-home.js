@@ -39,11 +39,16 @@ function renderWork() {
 // ---------- EXPERIENCE ----------
 function renderExperienceCard(x) {
   const logo = el("div", { class: "exp-logo" }, [mediaEl(x.logo, `${x.company} logo`)]);
-  const titleRow = el("div", { class: "exp-head-left" }, [
-    logo,
-    el("h3", {}, [])
+  const nameGroup = el("div", {}, [
+    el("h3", {}, []),
+    el("div", { class: "exp-role" }, []),
+    el("div", { class: "exp-dates" }, [])
   ]);
-  titleRow.querySelector("h3").textContent = x.company;
+  const titleRow = el("div", { class: "exp-head-left" }, [logo, nameGroup]);
+
+  nameGroup.querySelector("h3").textContent = x.company;
+  nameGroup.querySelector(".exp-role").textContent = x.role;
+  nameGroup.querySelector(".exp-dates").textContent = x.dates;
 
   const body = el("div", { class: "card-body" }, [
     titleRow,

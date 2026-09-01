@@ -19,7 +19,7 @@ window.EXPERIENCE = [
     id: "SharkNinja",
     company: "SharkNinja",
     logo: "assets/experience/sn/snlogo.jpeg", // <-- put logo image path/URL here, e.g. "assets/logos/sharkninja.png"
-    role: "Product Development Engineering Intern, Advanced Development",
+    role: "Product Design Engineering Intern, Advanced Development",
     dates: "May 2026 - August 2026",
     location: "Boston, MA",
     summary: "Product Design and Ideation for the Frozen Treats product line, focusing on new product conceptualization, user experience, testing, and cross-functional validation.",
