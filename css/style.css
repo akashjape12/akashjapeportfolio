@@ -98,6 +98,18 @@ h1, h2, h3 {
   height: 64px;
 }
 
+.site-nav .brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-nav .brand-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .site-nav .brand {
   font-family: var(--font-display);
   font-weight: 700;
