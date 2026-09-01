@@ -69,7 +69,7 @@ window.PROJECTS = [
     id: "mdm2024",
     title: "2024 Medical Device Makeathon",
     material: "Medical Grade Silicone",
-    summary: "Developed novel speculum design for cervical procedures. Won 2nd place at a 2-day sprint makeathon.",
+    summary: "Collaboratively developed novel speculum design for cervical procedures. Won 2nd place at a 2-day sprint makeathon.",
     description: "Competed at the 6th annual Medical Device Makeathon, where our team collaborated over 48 hours to solve a design challenge centered on women's health. Dividing tasks into research, design, prototyping, and presentation, we were able to deliver a thorough prototype and win 2nd place.",
     thumbnail: "assets/projects/mdm/mdmspec.png",
     heroImage: "assets/projects/mdm/mdmspec.png",
