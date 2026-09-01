@@ -4,7 +4,20 @@ function getExperienceId() {
 
 function renderExperienceProject(ep) {
   const h2 = el("h2", {}, []); h2.textContent = ep.title;
+  const blockChildren = [h2];
+
+  if (ep.skills && ep.skills.length) {
+    const skillsRow = el("div", { class: "exp-skills" }, ep.skills.map(t => {
+      const tag = el("span", { class: "exp-skill" }, []);
+      tag.textContent = t;
+      return tag;
+    }));
+    blockChildren.push(skillsRow);
+  }
+
   const bodyText = el("div", { class: "body-text" }, []); bodyText.textContent = ep.description;
+  blockChildren.push(bodyText);
+
   const imgGrid = el(
     "div",
     { class: "cs-section-images" },
@@ -12,16 +25,29 @@ function renderExperienceProject(ep) {
   );
 
   let media = imgGrid;
-  if (ep.skills && ep.skills.length) {
-    const skillsList = el("ul", { class: "exp-skills" }, ep.skills.map(s => {
+  if (ep.bullets && ep.bullets.length) {
+    const bulletsList = el("ul", { class: "exp-bullets" }, ep.bullets.map(s => {
       const li = el("li", {}, []);
-      li.textContent = s;
+      li.innerHTML = s;
       return li;
     }));
-    media = el("div", { class: "exp-media-row" }, [imgGrid, skillsList]);
+    media = el("div", { class: "exp-media-row" }, [imgGrid, bulletsList]);
   }
+  blockChildren.push(media);
 
-  return el("div", { class: "cs-block" }, [h2, el("div", { class: "body" }, [bodyText, media])]);
+  return el("div", { class: "cs-block" }, blockChildren);
+}
+
+function renderConfidentialityBlock(text) {
+  const noteBlock = el("dl", { class: "cs-title-block exp-confidentiality" }, [
+    el("div", { class: "field" }, [
+      el("dt", {}, []),
+      el("dd", {}, [])
+    ])
+  ]);
+  noteBlock.querySelector("dt").textContent = "Confidentiality";
+  noteBlock.querySelector("dd").textContent = text;
+  return noteBlock;
 }
 
 function renderExperienceEntry(x) {
@@ -44,18 +70,25 @@ function renderExperienceEntry(x) {
   const summary = el("p", { class: "exp-summary" }, []);
   summary.textContent = x.summary;
 
-  const entryChildren = [head, summary];
+  const confidentialityBlock = x.confidentiality ? renderConfidentialityBlock(x.confidentiality) : null;
 
-  if (x.confidentiality) {
-    const noteBlock = el("dl", { class: "cs-title-block exp-confidentiality" }, [
-      el("div", { class: "field" }, [
-        el("dt", {}, []),
-        el("dd", {}, [])
-      ])
-    ]);
-    noteBlock.querySelector("dt").textContent = "Confidentiality";
-    noteBlock.querySelector("dd").textContent = x.confidentiality;
-    entryChildren.push(noteBlock);
+  let summaryBlock = summary;
+  let confidentialityInRow = false;
+  if (x.heroImage) {
+    const heroImage = el("div", { class: "exp-hero-image" }, [mediaEl(x.heroImage, `${x.company} hero`)]);
+    const textColChildren = [summary];
+    if (confidentialityBlock) {
+      textColChildren.push(confidentialityBlock);
+      confidentialityInRow = true;
+    }
+    const textCol = el("div", { class: "exp-text-col" }, textColChildren);
+    summaryBlock = el("div", { class: "exp-summary-row" }, [heroImage, textCol]);
+  }
+
+  const entryChildren = [head, summaryBlock];
+
+  if (confidentialityBlock && !confidentialityInRow) {
+    entryChildren.push(confidentialityBlock);
   }
 
   const projectsWrap = el("div", { class: "exp-projects" }, (x.projects || []).map(renderExperienceProject));

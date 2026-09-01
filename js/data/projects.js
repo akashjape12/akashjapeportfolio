@@ -29,6 +29,33 @@
 
 window.PROJECTS = [
   {
+    id: "mdm2024",
+    title: "2024 Medical Device Makeathon",
+    material: "Medical Grade Silicone",
+    summary: "Collaboratively developed novel speculum design for cervical procedures. Won 2nd place at a 2-day sprint makeathon.",
+    description: "Competed at the 6th annual Medical Device Makeathon, where our team collaborated over 48 hours to solve a design challenge centered on women's health. Dividing tasks into research, design, prototyping, and presentation, we were able to deliver a thorough prototype and win 2nd place.",
+    thumbnail: "assets/projects/mdm/mdmspec.png",
+    heroImage: "assets/projects/mdm/mdmspec.png",
+    content: [
+      { heading: "Presentation", body: '<a class="cs-link-box" href="assets/projects/mdm/MMM.pdf" download="MDM-2024-Presentation.pdf">View presentation (PDF)</a>' },
+    ],
+    gallery: [null, null, null, null]
+  },
+  {
+    id: "lampstorage",
+    title: "Lamp Storage Bin",
+    material: "PETG",
+    summary: "Storage solution for IKEA Lauters lamp.",
+    description: "I have an IKEA Lauters lamp next to my bed. It is a beautiful piece of furniture, and provides a warm, glowing light for reading and relaxation. The only issue I had was that the wide base made it impossible to also have a nightstand. Tired of leaving my phone and belongings on a cardboard box on the floor, I designed a storage bin that mounts directly to the lamp's frame.",
+    thumbnail: "assets/projects/lampbin/lampbin.png",
+    heroImage: null,
+    content: [
+      { heading: "Lauters Lamp", body: "", images: ["assets/projects/lampbin/lauters full.jpeg", "assets/projects/lampbin/lautersmount.jpeg"] },
+      { heading: "Storage Bin", body: "<ul><li>Bin mounts on circular surface shown above.</li><li>3-part assembly: Each piece sits in the space between two legs.</li></ul>", images: ["assets/projects/lampbin/lampbin.png"] }
+    ],
+    gallery: [null, null, null, null]
+  },
+  {
     id: "modularvessel",
     title: "Modular Vessel",
     material: "PLA",
@@ -62,19 +89,6 @@ window.PROJECTS = [
         body: "<ul><li>Improved on Concept 4.</li><li>Thickened bosses for manufacturability and strength.</li><li><b>Next Steps:</b> Experiment with fabrics and flexible polymers to create inner sleeve for fluid retention.</li></ul>",
         images: ["assets/projects/modcup/conc5.jpg"]
       }
-    ],
-    gallery: [null, null, null, null]
-  },
-  {
-    id: "mdm2024",
-    title: "2024 Medical Device Makeathon",
-    material: "Medical Grade Silicone",
-    summary: "Collaboratively developed novel speculum design for cervical procedures. Won 2nd place at a 2-day sprint makeathon.",
-    description: "Competed at the 6th annual Medical Device Makeathon, where our team collaborated over 48 hours to solve a design challenge centered on women's health. Dividing tasks into research, design, prototyping, and presentation, we were able to deliver a thorough prototype and win 2nd place.",
-    thumbnail: "assets/projects/mdm/mdmspec.png",
-    heroImage: "assets/projects/mdm/mdmspec.png",
-    content: [
-      { heading: "Presentation", body: '<a class="cs-link-box" href="assets/projects/mdm/MMM.pdf" download="MDM-2024-Presentation.pdf">View presentation (PDF)</a>' },
     ],
     gallery: [null, null, null, null]
   },
@@ -115,20 +129,6 @@ window.PROJECTS = [
         body: "",
         images: ["assets/projects/lithophane/lithophaneon.jpeg"]
       }
-    ],
-    gallery: [null, null, null, null]
-  },
-  {
-    id: "lampstorage",
-    title: "Lamp Storage Bin",
-    material: "PETG",
-    summary: "Storage solution for IKEA Lauters lamp.",
-    description: "I have an IKEA Lauters lamp next to my bed. It is a beautiful piece of furniture, and provides a warm, glowing light for reading and relaxation. The only issue I had was that the wide base made it impossible to also have a nightstand. Tired of leaving my phone and belongings on a cardboard box on the floor, I designed a storage bin that mounts directly to the lamp's frame.",
-    thumbnail: "assets/projects/lampbin/lampbin.png",
-    heroImage: null,
-    content: [
-      { heading: "Lauters Lamp", body: "", images: ["assets/projects/lampbin/lauters full.jpeg", "assets/projects/lampbin/lautersmount.jpeg"] },
-      { heading: "Storage Bin", body: "<ul><li>Bin mounts on circular surface shown above.</li><li>3-part assembly: Each piece sits in the space between two legs.</li></ul>", images: ["assets/projects/lampbin/lampbin.png"] }
     ],
     gallery: [null, null, null, null]
   },

@@ -56,7 +56,13 @@ function renderExperienceCard(x) {
   ]);
   body.querySelector(".summary").textContent = x.summary;
 
-  return el("a", { class: "project-card", href: `experience.html?id=${encodeURIComponent(x.id)}` }, [body]);
+  const cardChildren = [];
+  if (x.thumbnail) {
+    cardChildren.push(el("div", { class: "thumb" }, [mediaEl(x.thumbnail, `${x.company} thumbnail`, "4:3")]));
+  }
+  cardChildren.push(body);
+
+  return el("a", { class: "project-card", href: `experience.html?id=${encodeURIComponent(x.id)}` }, cardChildren);
 }
 
 function renderExperience() {

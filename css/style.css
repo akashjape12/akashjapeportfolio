@@ -296,6 +296,7 @@ h1, h2, h3 {
 
 .project-card {
   display: block;
+  position: relative;
   border: var(--rule-thin);
   background: var(--color-panel);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
@@ -305,6 +306,27 @@ h1, h2, h3 {
 .project-card:focus-visible {
   transform: translateY(-3px);
   box-shadow: 6px 6px 0 var(--color-ink);
+}
+
+/* corner flag signaling the card is clickable */
+.project-card::after {
+  content: "Expand ↗";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--color-oxide);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .project-card .thumb {
@@ -321,7 +343,7 @@ h1, h2, h3 {
 }
 
 .project-card .card-body {
-  padding: 18px 20px 20px;
+  padding: 18px 20px 48px;
 }
 
 .project-card h3 {
@@ -452,19 +474,57 @@ h1, h2, h3 {
 .experience-entry .exp-summary {
   padding: 20px 24px 0;
   max-width: 100%;
-  color: var(--color-ink-soft);
-  font-size: 15px;
+  color: var(--color-ink);
+  font-size: 18px;
+}
+
+.experience-entry .exp-summary-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 24px 0;
+}
+.exp-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.exp-text-col .exp-summary {
+  padding: 0;
+}
+.exp-hero-image {
+  flex: 0 0 240px;
+  width: 240px;
+}
+.exp-hero-image img,
+.exp-hero-image video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: var(--rule-thin);
+}
+.exp-text-col .cs-title-block.exp-confidentiality {
+  width: 100%;
+  margin: 0;
+}
+@media (max-width: 720px) {
+  .experience-entry .exp-summary-row { flex-direction: column; }
+  .exp-hero-image { width: 100%; flex-basis: auto; }
 }
 
 .cs-title-block.exp-confidentiality {
   display: block;
-  width: fit-content;
-  max-width: 620px;
+  width: auto;
   margin: 20px 24px 0;
   border: none;
 }
 .cs-title-block.exp-confidentiality .field {
   border: var(--rule-thin);
+}
+.cs-title-block.exp-confidentiality dt {
+  color: var(--color-oxide);
 }
 .cs-title-block.exp-confidentiality dd {
   line-height: 1.6;
@@ -475,6 +535,29 @@ h1, h2, h3 {
 }
 .exp-projects .cs-block:first-child {
   border-top: none;
+}
+.exp-projects .cs-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.exp-projects .cs-block .body-text {
+  max-width: none;
+}
+
+.exp-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.exp-skill {
+  background: var(--color-ink-soft);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
 }
 
 /* =========================================================
@@ -498,7 +581,7 @@ h1, h2, h3 {
 
 .misc-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -732,7 +815,7 @@ h1, h2, h3 {
   max-width: 320px;
 }
 
-/* experience mini-project images: left-justified, with room for a skills list beside them */
+/* experience mini-project images: left-justified, with room for a bullets list beside them */
 .exp-projects .cs-section-images {
   justify-content: flex-start;
 }
@@ -748,15 +831,22 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
-.exp-skills {
+.exp-bullets {
   flex: 1 1 200px;
   margin: 0;
   padding-left: 1.2em;
   color: var(--color-ink-soft);
   font-size: 15px;
 }
-.exp-skills li {
+.exp-bullets li {
   margin-bottom: 6px;
+}
+.exp-bullets li ul {
+  margin: 4px 0 0;
+  padding-left: 1.2em;
+}
+.exp-bullets li ul li {
+  margin-bottom: 2px;
 }
 
 .cs-nav {
