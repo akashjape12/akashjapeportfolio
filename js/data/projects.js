@@ -39,7 +39,7 @@ window.PROJECTS = [
     heroImagePosition: "center 46%", // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
     content: [
       { heading: "Inspiration", body: "", images: ["assets/projects/Cushioned Organizer/inspiration.jpeg"] },
-      { heading: "Next Steps", body: "<ul><li>Fabricate frame out of PLA and assemble with felt</li><li><b>Ideal Material:</b> Anodized aluminum in a charcoal shade</li></ul>", images: null },
+      { heading: "Fabrication and Next Steps", body: "<ul><li><b>DFM/A:</b> Tightly wrap and glue felt around the piece indicated in red, then insert into the black frame. Cavity in the frame is toleranced for the thickness of the fabric.</li><li><b>Ideal Material:</b> Replace black PLA with anodized aluminum in a charcoal shade</li></ul>", images: ["assets/projects/Cushioned Organizer/assembly.jpg"] },
     ],
     gallery: [null, null, null, null]
   },
