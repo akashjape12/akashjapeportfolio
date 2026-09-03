@@ -21,6 +21,8 @@ window.MISC = [
   { title: "Customizable Office Sign", image: "assets/misc/sign.jpeg", link: null, caption: "Customizable signage for university office", process: "Laser Cut" },
   { title: "Lamp Dimmer", image: "assets/misc/lampdim.jpg", link: null, caption: "Removable lamp dimmer leveraging visual character of FDM infill", process: "FDM" },
   { title: "End-Grain Cutting Board", image: "assets/misc/board.jpeg", link: null, caption: "Walnut and Cherry end-grain cutting board", process: "Woodworking" },
+  { title: "Backlit Lithophane Stand", image: "assets/misc/lithophaneon.jpeg", link: null, caption: "Laser-cut stand to display a lithophane", process: "Laser Cut" },
+  { title: "Scooter Lock", image: "assets/misc/scooter.jpg", link: null, caption: "A mount for securing a U-shaped steel lock to the scooter handlebars.", process: "FDM" },
   { title: "Crane Sculpture", image: "assets/misc/crane.jpeg", link: null, caption: "Laser-cut sculpture of an origami crane", process: "Laser Cut" },
   { title: "Record Stand", image: "assets/misc/recordstand.jpeg", link: null, caption: "Tabletop vinyl record display", process: "Laser Cut" },
   { title: "Sustainable Spool Storage", image: "assets/misc/spool.jpeg", link: null, caption: "Workshop storage repurposing old filament spools", process: "FDM" },

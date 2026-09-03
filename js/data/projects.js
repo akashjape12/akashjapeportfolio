@@ -29,6 +29,21 @@
 
 window.PROJECTS = [
   {
+    id: "cushionorganizer",
+    title: "Cushioned Organizer",
+    material: "PLA, Felt, Aluminum",
+    summary: "Desktop piece for glasses and everyday items. Inspired by vintage jewelry box.",
+    description: "While traveling in Ireland, I came across a vintage jewelry box featuring a cushioned top and a small drawer. I had never seen anything of the sort, and initially thought that the cushion could hold eyeglasses. The kind shop owner corrected my assumptions, but I left with inspiration nonetheless. The design below deconstructs the form of the jewelry box using an FDM printed frame, a sheet aluminum tray from MUJI, and red felt for the eyeglasses cushion.",
+    thumbnail: "assets/projects/Cushioned Organizer/render.jpeg",
+    heroImage: "assets/projects/Cushioned Organizer/render.jpeg",
+    heroImagePosition: "center 46%", // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
+    content: [
+      { heading: "Inspiration", body: "", images: ["assets/projects/Cushioned Organizer/inspiration.jpeg"] },
+      { heading: "Next Steps", body: "<ul><li>Fabricate frame out of PLA and assemble with felt</li><li><b>Ideal Material:</b> Anodized aluminum in a charcoal shade</li></ul>", images: null },
+    ],
+    gallery: [null, null, null, null]
+  },
+  {
     id: "mdm2024",
     title: "2024 Medical Device Makeathon",
     material: "Medical Grade Silicone",
@@ -36,8 +51,25 @@ window.PROJECTS = [
     description: "Competed at the 6th annual Medical Device Makeathon, where our team collaborated over 48 hours to solve a design challenge centered on women's health. Dividing tasks into research, design, prototyping, and presentation, we were able to deliver a thorough prototype and win 2nd place.",
     thumbnail: "assets/projects/mdm/mdmspec.png",
     heroImage: "assets/projects/mdm/mdmspec.png",
+    heroImagePosition: null, // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
     content: [
       { heading: "Presentation", body: '<a class="cs-link-box" href="assets/projects/mdm/MMM.pdf" download="MDM-2024-Presentation.pdf">View presentation (PDF)</a>' },
+    ],
+    gallery: [null, null, null, null]
+  },
+  {
+    id: "mahjong",
+    title: "Mahjong Bookshelf",
+    material: "Walnut, Red Oak, Acrylic Paint, Mahjong Tiles",
+    summary: "Bookshelf inspired by mahjong motifs and artwork.",
+    description: "This project was inspired by a mahjong tile placed as a paperweight on my brunch bill one Sunday morning. I was captivated by the tile's form and refreshing green color, and wanted to see it in my own home. I designed a bookshelf that incorporates the tiles as a decorative element, taking advantage of both the icons and the backing color to offer unique views from every angle. The latticed walls are made of walnut strips inspired by kumiko joinery, and the base itself is red oak stained green. The base houses another mosaic of tiles which, although often hidden by books, will offer a pop of color when books are removed from the shelf. The render represents the icons as red dots for simplicity, but the final product aims to play with the variety of artworks featured across the 146 tiles of a standard set.",
+    thumbnail: "assets/projects/mahjong shelf/render.jpeg",
+    heroImage: "assets/projects/mahjong shelf/render.jpeg",
+    heroImagePosition: null, // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
+    content: [
+      { heading: "Initial Concept Sketch", body: "<ul><li>Hastily hashed out in the post-brunch food coma</li></ul>", images: ["assets/projects/mahjong shelf/sketch.jpeg"] },
+      { heading: "Tiles", body: "", images: ["assets/projects/mahjong shelf/tile.jpg"] },
+      { heading: "Next Steps", body: "<ul><li>Lattice construction with repeatable slats for accuracy and efficiency</li><li>Stain base block to closely resemble the tile's green hue, hex code #56862E</li></ul>", images: ["assets/projects/mahjong shelf/strips.PNG"]},
     ],
     gallery: [null, null, null, null]
   },
@@ -49,6 +81,7 @@ window.PROJECTS = [
     description: "I have an IKEA Lauters lamp next to my bed. It is a beautiful piece of furniture, and provides a warm, glowing light for reading and relaxation. The only issue I had was that the wide base made it impossible to also have a nightstand. Tired of leaving my phone and belongings on a cardboard box on the floor, I designed a storage bin that mounts directly to the lamp's frame.",
     thumbnail: "assets/projects/lampbin/lampbin.png",
     heroImage: null,
+    heroImagePosition: null, // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
     content: [
       { heading: "Lauters Lamp", body: "", images: ["assets/projects/lampbin/lauters full.jpeg", "assets/projects/lampbin/lautersmount.jpeg"] },
       { heading: "Storage Bin", body: "<ul><li>Bin mounts on circular surface shown above.</li><li>3-part assembly: Each piece sits in the space between two legs.</li></ul>", images: ["assets/projects/lampbin/lampbin.png"] }
@@ -63,6 +96,7 @@ window.PROJECTS = [
     description: "The idea for this concept arose from a backpacking trip where I had to pack a bowl, drinking cup, and larger vessel in the same pack. Packing all three took too much space, and I wondered if there was a modular solution to allow for a variety of sizes. I aimed to take advantage of a tool that every hiker has: the carabiner. The idea was to have a modular system of N rings that would stack and expand to allow for 2^N size combinations. Much of the prototyping work on this has been regarding the fastening and expansion mechanisms, and the fluid storage remains in development.",
     thumbnail: "assets/projects/modcup/modcup_summary.jpg",
     heroImage: "assets/projects/modcup/modcup_summary.jpg",
+    heroImagePosition: null, // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
     content: [
       {
         heading: "Concept 1",
@@ -100,6 +134,7 @@ window.PROJECTS = [
     description: "My backpack features a fabric loop system along one side instead of a bottle sleeve. While the loop system was efficient for clips and rings, I found it difficult to store larger items like bottles or tripods with stability. I developed a system that revolves around a single clip and allows any attachment to securely fasten to the side of the pack.",
     thumbnail: "assets/projects/backpackmod/model.jpeg",
     heroImage: null,
+    heroImagePosition: null, // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
     content: [
       { heading: "Core Design",
         body: "<ul><li>Aluminum clip hooks into two adjacent loops.</li><li>Wedge shape acts as adapter to allow any attachment to securely fasten to clip.</li></ul>",
@@ -110,49 +145,4 @@ window.PROJECTS = [
     ],
     gallery: [null, null, null, null]
   },
-  {
-    id: "lithophane",
-    title: "Lithophane Stand",
-    material: "Birch Plywood, PLA",
-    summary: "Desktop lithophane display stand, designed for makerspace build night.",
-    description: "At the Texas Inventionworks makerspace, build nights are an opportunity for students of all experience levels to work on a project from design to assembly. Looking to expose students to a breadth of manufacturing processes in a single project, I designed a lithophane stand incorporating additive manufacturing, laser cutting, and soldering.",
-    thumbnail: "assets/projects/lithophane/lithophaneon.jpeg",
-    heroImage: null,
-    content: [
-      { heading: "What is a Lithophane?",
-        body: "<ul><li>A lithophane is a type of 3D printed artwork that manipulates part thickness to create varying tones and shadows when backlit.</li><li>Students were guided through the process of using digital tools to generate 3D models of lithophanes with photos of their choice.</li></ul>",
-        images: ["assets/projects/lithophane/lithophaneoff.jpeg"] },
-      { heading: "Frame and Backlighting",
-        body: "<ul><li>They laser cut and assembled a plywood frame to hold the lights and lithophane.</li><li>LED strips were soldered together and adhered to the back of the frame to backlight the image.</li></ul>",
-        images: ["assets/projects/lithophane/lithophaneframe.jpeg", "assets/projects/lithophane/lithophaneleds.jpeg"] },
-      { heading: "Final Product",
-        body: "",
-        images: ["assets/projects/lithophane/lithophaneon.jpeg"]
-      }
-    ],
-    gallery: [null, null, null, null]
-  },
-  {
-    id: "scooterlock",
-    title: "Scooter Lock Mount",
-    material: "PETG, Aluminum",
-    summary: "A mount for securing a U-shaped steel lock to the handlebars.",
-    description: "I used to ride a scooter, and found that there was no convenient way to carry around the U-shaped steel lock. To combat this, I designed a handlebar mount to easily and securely store the lock while riding. The mount is a single solid body that takes advantage of the lock's functionality to secure itself to the handlebar.",
-    thumbnail: "assets/projects/scooterlock/demo.jpg",
-    heroImage: "assets/projects/scooterlock/demo.jpg",
-    heroImagePosition: "center 30%", // shifts the crop toward the top of the photo; tweak the % (0% = top, 100% = bottom) or delete this line to reset to centered
-    content: [
-      { heading: "First Iteration",
-        body: "<ul><li>Central section was too thin; minor bumps in the road would produce enough impact to fracture the part.</li></ul>",
-        images: ["assets/projects/scooterlock/firstver.jpg"] },
-      { heading: "Second Iteration",
-        body: "<ul><li>Reinforced with aluminum.</li></ul>",
-        images: ["assets/projects/scooterlock/secondver.jpg"] },
-      { heading: "Final Iteration",
-      body: "<ul><li>Reinforcement was not enough: High stress concentration at composite PETG-Aluminum interface.</li><li>Thickened critical section to reduce stress.</li></ul>",
-      images: ["assets/projects/scooterlock/finalver.jpg"] },
-  ],
-    gallery: [null, null, null, null]
-  },
-
 ];
