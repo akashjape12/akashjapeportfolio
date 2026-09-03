@@ -65,7 +65,7 @@ window.PROJECTS = [
     description: "This project was inspired by a mahjong tile placed as a paperweight on my brunch bill one Sunday morning. I was captivated by the tile's form and refreshing green color, and wanted to see it in my own home. I designed a bookshelf that incorporates the tiles as a decorative element, taking advantage of both the icons and the backing color to offer unique views from every angle. The latticed walls are made of walnut strips inspired by kumiko joinery, and the base itself is red oak stained green. The base houses another mosaic of tiles which, although often hidden by books, will offer a pop of color when books are removed from the shelf. The render represents the icons as red dots for simplicity, but the final product aims to play with the variety of artworks featured across the 146 tiles of a standard set.",
     thumbnail: "assets/projects/mahjong shelf/render.jpeg",
     heroImage: "assets/projects/mahjong shelf/render.jpeg",
-    heroImagePosition: null, // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
+    heroImagePosition: "center 60%", // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
     content: [
       { heading: "Initial Concept Sketch", body: "<ul><li>Hastily hashed out in the post-brunch food coma</li></ul>", images: ["assets/projects/mahjong shelf/sketch.jpeg"] },
       { heading: "Tiles", body: "", images: ["assets/projects/mahjong shelf/tile.jpg"] },
