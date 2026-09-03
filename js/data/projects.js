@@ -79,12 +79,12 @@ window.PROJECTS = [
     material: "PETG",
     summary: "Storage solution for IKEA Lauters lamp.",
     description: "I have an IKEA Lauters lamp next to my bed. It is a beautiful piece of furniture, and provides a warm, glowing light for reading and relaxation. The only issue I had was that the wide base made it impossible to also have a nightstand. Tired of leaving my phone and belongings on a cardboard box on the floor, I designed a storage bin that mounts directly to the lamp's frame.",
-    thumbnail: "assets/projects/lampbin/lampbin.png",
+    thumbnail: "assets/projects/lampbin/render.jpg",
     heroImage: null,
     heroImagePosition: null, // e.g. "center 30%" to shift the crop (0% = top, 100% = bottom); leave null for centered
     content: [
       { heading: "Lauters Lamp", body: "", images: ["assets/projects/lampbin/lauters full.jpeg", "assets/projects/lampbin/lautersmount.jpeg"] },
-      { heading: "Storage Bin", body: "<ul><li>Bin mounts on circular surface shown above.</li><li>3-part assembly: Each piece sits in the space between two legs.</li></ul>", images: ["assets/projects/lampbin/lampbin.png"] }
+      { heading: "Storage Bin", body: "<ul><li>Bin mounts on lamp as shown.</li><li>3-part assembly: Each piece sits in the space between two legs.</li></ul>", images: ["assets/projects/lampbin/lampbin.png", "assets/projects/lampbin/render.jpg"] }
     ],
     gallery: [null, null, null, null]
   },
